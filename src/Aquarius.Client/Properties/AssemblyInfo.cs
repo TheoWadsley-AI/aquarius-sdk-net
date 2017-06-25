@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Aquarius.Client")]
+[assembly: AssemblyTitle("Aquarius.Client.Net451")]
 [assembly: AssemblyDescription("")]
 [assembly: ComVisible(false)]
 [assembly: AssemblyCompany("Aquatic Informatics Inc.")]
