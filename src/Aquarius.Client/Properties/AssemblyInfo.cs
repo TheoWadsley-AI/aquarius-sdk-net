@@ -16,6 +16,6 @@ using System.Runtime.InteropServices;
 
 // This code will be updated by the build system.
 // Developer builds should remain at version 0.0.0.0 so that unofficial binaries will be obvious.
-[assembly: AssemblyVersion("0.0.0.0")]
-[assembly: AssemblyFileVersion("0.0.0.0")]
-[assembly: AssemblyInformationalVersion("0.0.0.0")]
+[assembly: AssemblyVersion("2017.2.29.0")]
+[assembly: AssemblyFileVersion("2017.2.29.0")]
+[assembly: AssemblyInformationalVersion("2017.2.29.0")]
