@@ -1761,6 +1761,21 @@ namespace Aquarius.TimeSeries.Client.ServiceModels.Publish
         public StatisticalDateTimeOffset EndTime { get; set; }
     }
 
+    public class TagMetadata
+    {
+        ///<summary>
+        ///Name
+        ///</summary>
+        [ApiMember(Description="Name")]
+        public string Name { get; set; }
+
+        ///<summary>
+        ///UniqueId
+        ///</summary>
+        [ApiMember(DataType="string", Description="UniqueId")]
+        public Guid UniqueId { get; set; }
+    }
+
     public enum ThresholdType
     {
         Unknown,
@@ -5154,6 +5169,12 @@ namespace Aquarius.TimeSeries.Client.ServiceModels.Publish
         public DateTime? ChangesSinceToken { get; set; }
     }
 
+    [Route("/GetLocationTagList", "GET")]
+    public class LocationTagListServiceRequest
+        : IReturn<LocationTagListServiceResponse>
+    {
+    }
+
     [Route("/GetMetadataChangeTransactionList", "GET")]
     public class MetadataChangeTransactionListServiceRequest
         : IReturn<MetadataChangeTransactionListServiceResponse>
@@ -6036,6 +6057,21 @@ namespace Aquarius.TimeSeries.Client.ServiceModels.Publish
         ///</summary>
         [ApiMember(DataType="DateTime", Description="Next token")]
         public DateTime? NextToken { get; set; }
+    }
+
+    public class LocationTagListServiceResponse
+        : PublishServiceResponse
+    {
+        public LocationTagListServiceResponse()
+        {
+            Tags = new List<TagMetadata>();
+        }
+
+        ///<summary>
+        ///Tags
+        ///</summary>
+        [ApiMember(DataType="Array<TagMetadata>", Description="Tags")]
+        public List<TagMetadata> Tags { get; set; }
     }
 
     public class MetadataChangeTransactionListServiceResponse
