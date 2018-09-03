@@ -755,6 +755,7 @@ namespace Aquarius.TimeSeries.Client.ServiceModels.Publish
         public LocationDescription()
         {
             SecondaryFolders = new List<string>{};
+            Tags = new List<TagMetadata>{};
         }
 
         ///<summary>
@@ -798,6 +799,12 @@ namespace Aquarius.TimeSeries.Client.ServiceModels.Publish
         ///</summary>
         [ApiMember(DataType="DateTimeOffset", Description="Last modified")]
         public DateTimeOffset LastModified { get; set; }
+
+        ///<summary>
+        ///Tags
+        ///</summary>
+        [ApiMember(DataType="Array<TagMetadata>", Description="Tags")]
+        public List<TagMetadata> Tags { get; set; }
     }
 
     public class LocationMonitoringMethod
@@ -5929,6 +5936,7 @@ namespace Aquarius.TimeSeries.Client.ServiceModels.Publish
     {
         public LocationDataServiceResponse()
         {
+            Tags = new List<TagMetadata>{};
             ExtendedAttributes = new List<ExtendedAttribute>{};
             LocationRemarks = new List<LocationRemark>{};
             Attachments = new List<Attachment>{};
@@ -6008,6 +6016,12 @@ namespace Aquarius.TimeSeries.Client.ServiceModels.Publish
         public double UtcOffset { get; set; }
 
         ///<summary>
+        ///Tags
+        ///</summary>
+        [ApiMember(DataType="Array<TagMetadata>", Description="Tags")]
+        public List<TagMetadata> Tags { get; set; }
+
+        ///<summary>
         ///Extended attributes
         ///</summary>
         [ApiMember(DataType="Array<ExtendedAttribute>", Description="Extended attributes")]
@@ -6064,7 +6078,7 @@ namespace Aquarius.TimeSeries.Client.ServiceModels.Publish
     {
         public LocationTagListServiceResponse()
         {
-            Tags = new List<TagMetadata>();
+            Tags = new List<TagMetadata>{};
         }
 
         ///<summary>
